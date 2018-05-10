@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
  // handelbars package
+
+const port = process.env.PORT || 3000;
 const app = express();
 
 hbs.registerPartials(`${__dirname  }/views/partials`);
@@ -51,6 +53,6 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('server started . . .');
+app.listen(port, () => {
+    console.log(`server started on port ${port}. . .`);
 });
